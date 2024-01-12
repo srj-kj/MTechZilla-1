@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './Redux/Store';
 import UserAuth from './Redux/UserAuth';
+import LoginAuth from './Redux/LoginAuth';
 
 function App() {
   return (
@@ -19,8 +20,11 @@ function App() {
               <Route element={<UserAuth />}>
                 <Route path="/" element={<Home />} />
               </Route>
+              <Route element={<LoginAuth />}>
+
               <Route path="/signup" element={<SignupForm />} />
               <Route path="/login" element={<LoginForm />} />
+              </Route>
             </Routes>
           </BrowserRouter>
         </PersistGate>
